@@ -9,13 +9,14 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- Burgers waiting to be eaten -->
-                <ul class="btn-group-vertical" role="group">
+                <h3>Not Eaten Yet</h3>
+                <ul>
                     {{#each burgers}}
                     {{#unless devoured}}
-                    <li data-id="{{id}}">
+                    <li data-id="{{id}}" class="mb-1 p-1">
 
                         <form action="api/burgers/{{id}}?_method=PUT" method="POST" class="devour-it">
-                            <button type="submit" class="btn btn-warning">{{burger_name}}</button>
+                            <button type="submit" class="btn btn-warning shadow">{{burger_name}}</button>
                         </form>
                     </li>
                     {{/unless}}
@@ -24,7 +25,8 @@
             </div>
             <div class="col-md-6">
                 <!-- Burgers that have been eaten-->
-                <ul class="list-group">
+                <h3>Eaten</h3>
+                <ul class="list-group shadow">
                     {{#each burgers}}
                     {{#if devoured}}
                     <li class="list-group-item" data-id="{{id}}">
@@ -47,7 +49,7 @@
                         <input type="text" class="form-control" id="new-burger" name="name"
                             placeholder="What would you like to eat?">
                     </div>
-                    <button type="submit" class="btn btn-success">Add Burger</button>
+                    <button type="submit" class="btn btn-success">Order!</button>
                 </form>
             </div>
         </div>
