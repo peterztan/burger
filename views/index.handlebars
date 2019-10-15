@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="jumbotron shadow-lg m-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-3">The Krusty Burgers!</h1>
+                <p class="lead">Now you can try your very own Krusty Burger and maybe find out the Secret Recipe!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Burgers waiting to be eaten -->
+                <ul>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li data-id="{{id}}">
+                        {{burger_name}}
+                        <form action="api/burgers/{{id}}?_method=PUT" method="POST" class="devour-it">
+                            <button type="submit" class="btn btn-warning">Eat it!</button>
+                        </form>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <!-- Burgers that have been eaten-->
+                <ul>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li data-id="{{id}}">
+                        {{burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+            <div id="fill-your-plate">
+                <form action="api/burgers" method="POST" class="create-form">
+                    <div class="form-group">
+                        <label for="new-burger">
+                            <h2>May I take your order?</h2>
+                        </label>
+                        <input type="text" class="form-control" id="new-burger" name="name"
+                            placeholder="What would you like to eat?">
+                    </div>
+                    <button type="submit" class="btn btn-success">Add Burger</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

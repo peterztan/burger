@@ -1,0 +1,16 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    background: url('../images/KrustyKrab.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+.jumbotron {
+    background: inherit;
+    backdrop-filter: blur(20px);
+}
