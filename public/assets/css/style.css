@@ -14,3 +14,7 @@ body {
     background: inherit;
     backdrop-filter: blur(20px);
 }
+
+li {
+    list-style: none;
+}

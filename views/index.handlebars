@@ -13,9 +13,9 @@
                     {{#each burgers}}
                     {{#unless devoured}}
                     <li data-id="{{id}}">
-                        {{burger_name}}
+
                         <form action="api/burgers/{{id}}?_method=PUT" method="POST" class="devour-it">
-                            <button type="submit" class="btn btn-warning">Eat it!</button>
+                            <button type="submit" class="btn btn-warning">{{burger_name}}</button>
                         </form>
                     </li>
                     {{/unless}}
