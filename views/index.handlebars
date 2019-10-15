@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- Burgers waiting to be eaten -->
-                <ul>
+                <ul class="btn-group-vertical" role="group">
                     {{#each burgers}}
                     {{#unless devoured}}
                     <li data-id="{{id}}">
@@ -24,10 +24,10 @@
             </div>
             <div class="col-md-6">
                 <!-- Burgers that have been eaten-->
-                <ul>
+                <ul class="list-group">
                     {{#each burgers}}
                     {{#if devoured}}
-                    <li data-id="{{id}}">
+                    <li class="list-group-item" data-id="{{id}}">
                         {{burger_name}}
                     </li>
                     {{/if}}
